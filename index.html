@@ -1,0 +1,1119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio — Orange Noir</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  referrerpolicy="no-referrer" />
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7GqE1h7eGm6Y5d1p0w=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body id="top">
+  <!-- ====== Navbar ====== -->
+  <header class="nav" id="top">
+    <div class="container nav__inner">
+      <a class="brand" href="#top">
+        <span class="brand__dot"></span>
+        <span class="brand__name">Piyusha <span class="brand__accent">Sayal</span></span>
+      </a>
+
+      <button class="nav__toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav__menu" aria-label="Primary">
+        <a class="nav__link" href="#about">About</a>
+        <a class="nav__link" href="#skills">Skills</a>
+        <a class="nav__link" href="#experience">Experience</a>
+        <a class="nav__link" href="#education">Education</a>
+        <a class="nav__link" href="#projects">Projects</a>
+        <a class="nav__link nav__cta" href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ====== Hero ====== -->
+  <section class="hero top">
+    <div class="container hero__inner">
+      <div class="hero__left">
+        <p class="eyebrow">DATA ENGINEER • CLOUD • PIPELINES</p>
+        <h1 class="hero__title">
+  Hi, I’m <span class="accent">Piyusha</span><br />
+  I build <span class="accent rotateWord" id="rotateWord">scalable</span> data<br />
+  systems.
+</h1>
+
+
+        <p class="hero__subtitle">
+          I design reliable ETL workflows, improve data quality, and ship analytics-ready datasets using SQL, Python,
+          Spark, Airflow and cloud services.
+        </p>
+
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#projects">View Projects</a>
+          <a class="btn btn--ghost" href="#contact">Contact</a>
+        </div>
+
+        <div class="hero__chips">
+          <span class="chip">PySpark</span>
+          <span class="chip">Airflow</span>
+          <span class="chip">Snowflake</span>
+          <span class="chip">AWS</span>
+          <span class="chip">Databricks</span>
+        </div>
+      </div>
+
+      <div class="hero__right">
+        <div class="avatar">
+  <div class="avatar__ring">
+    <div class="avatar__disc">
+      <img src="./assets/img/img-piyusha.jpeg" alt="Profile photo" />
+    </div>
+  </div>
+</div>
+
+
+        <div class="hero__stats">
+          <div class="hero-achievements">
+  <div class="achCard">
+    <div class="achTitle">4+ Years of Data Engineering</div>
+  </div>
+
+  <div class="achCard">
+    <div class="achTitle">Entrepreneurship & Product Thinking</div>
+  </div>
+
+  <div class="achCard">
+    <div class="achTitle">Marketing & Event Leadership</div>
+  </div>
+</div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== About ====== -->
+  <section class="section" id="about">
+  <div class="container">
+    <div class="section__head">
+      <h2 class="section__title">About</h2>
+    </div>
+
+    <div class="grid2">
+
+      <!-- LEFT: WHO I AM -->
+      <div class="card aboutCard">
+        <h3 class="card__title">Who I am</h3>
+
+        <p class="muted aboutText">
+          I’m a <b>Data Engineer</b> who enjoys building data systems that teams can trust. My work sits at the
+          intersection of engineering and analytics — turning raw, inconsistent inputs into clean, query-ready datasets
+          that power dashboards, reporting, and product decisions.
+        </p>
+
+        <p class="muted aboutText">
+          I care about the details that make pipelines production-ready: <b>data contracts</b>, <b>validation rules</b>,
+          <b>monitoring</b>, and <b>recoverability</b>. I also love simplifying complexity , designing workflows that are
+          easy to maintain, easy to debug, and built to scale.
+        </p>
+
+        <!-- NEW: extra paragraph (replaces the facts list) -->
+        <p class="muted aboutText">
+          Beyond tools and pipelines, I value <b>clarity and ownership</b>. I take responsibility for the full lifecycle
+          of data from ingestion to consumption, ensuring definitions are aligned, assumptions are documented, and
+          downstream users can rely on the data. My goal is to make data products feel
+          boringly reliable.
+        </p>
+
+        <!-- Highlights -->
+        <div class="aboutHighlights">
+          <div class="aStat">
+            <div class="aStat__num">40%</div>
+            <div class="aStat__label">Faster delivery</div>
+            <div class="aStat__note">Pipeline optimization</div>
+          </div>
+          <div class="aStat">
+            <div class="aStat__num">200+</div>
+            <div class="aStat__label">DQ issues fixed</div>
+            <div class="aStat__note">Across client setups</div>
+          </div>
+          <div class="aStat">
+            <div class="aStat__num">30%</div>
+            <div class="aStat__label">Less downtime</div>
+            <div class="aStat__note">KPI monitoring</div>
+          </div>
+        </div>
+
+        <!-- Strength chips -->
+        <div class="aboutPillGrid">
+          <span class="aboutPill">Data quality checks</span>
+          <span class="aboutPill">SLA-first pipelines</span>
+          <span class="aboutPill">Cost-aware design</span>
+          <span class="aboutPill">Clear documentation</span>
+          <span class="aboutPill">Ownership mindset</span>
+          <span class="aboutPill">Stakeholder-ready outputs</span>
+        </div>
+
+
+        <!-- Social icons -->
+        <div class="socialRow" aria-label="Social links">
+          <a class="socialIcon" href="mailto:piyusha.2510@gmail.com" aria-label="Email" title="Email">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M4 6h16v12H4V6Z" stroke="currentColor" stroke-width="1.8"/>
+              <path d="m4 7 8 6 8-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+
+          <a class="socialIcon" href="https://www.linkedin.com/in/piyusha-sayal/" target="_blank" rel="noopener"
+             aria-label="LinkedIn" title="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M6.5 9.5V18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M6.5 6.6h.01" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+              <path d="M10.5 18v-4.6c0-1.3.7-2.2 2-2.2 1.4 0 2 1 2 2.3V18"
+                    stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </a>
+
+          <!-- Replace # with your GitHub link -->
+          <a class="socialIcon" href="#" aria-label="GitHub" title="GitHub">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M9 19c-3.5 1-3.5-2-5-2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M15 22v-3.3c0-.9.3-1.5.8-2-2.7-.3-5.5-1.3-5.5-6A4.6 4.6 0 0 1 11 7.2c-.1-.3-.5-1.6.1-3.2
+                       0 0 1-.3 3.3 1.2a11.3 11.3 0 0 1 6 0C22.7 3.7 23.7 4 23.7 4c.6 1.6.2 2.9.1 3.2a4.6 4.6 0 0 1 1.2 3.3
+                       c0 4.7-2.8 5.7-5.5 6 .5.5.8 1.2.8 2V22"
+                    stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+
+        <div class="card__actions">
+          <a class="btn btn--primary" href="#contact">Hire / Collaborate</a>
+          <a class="btn btn--ghost" href="#experience">View Experience</a>
+        </div>
+      </div>
+
+      <!-- RIGHT: HOW I WORK -->
+      <!-- RIGHT: HOW I WORK -->
+<div class="card card--soft aboutRight">
+  <h3 class="card__title">How I work</h3>
+
+  <div class="aboutRight__grid">
+    <div class="miniCard">
+      <div class="miniCard__top">
+        <span class="miniCard__badge">01</span>
+        <h4>Design for trust</h4>
+      </div>
+      <p class="muted">Define clear inputs/outputs, add validation checks, and keep datasets reproducible.</p>
+    </div>
+
+    <div class="miniCard">
+      <div class="miniCard__top">
+        <span class="miniCard__badge">02</span>
+        <h4>Make it observable</h4>
+      </div>
+      <p class="muted">Monitor freshness, anomalies, failures, and SLA risks so issues are caught early.</p>
+    </div>
+
+    <div class="miniCard">
+      <div class="miniCard__top">
+        <span class="miniCard__badge">03</span>
+        <h4>Keep it maintainable</h4>
+      </div>
+      <p class="muted">Use simple patterns, reusable components, and docs so pipelines scale with the team.</p>
+    </div>
+
+    <div class="miniCard">
+      <div class="miniCard__top">
+        <span class="miniCard__badge">04</span>
+        <h4>Ship with impact</h4>
+      </div>
+      <p class="muted">Work backward from the question and deliver clean tables that drive decisions.</p>
+    </div>
+
+    <!-- NEW 05 -->
+    <div class="miniCard">
+      <div class="miniCard__top">
+        <span class="miniCard__badge">05</span>
+        <h4>Communicate clearly</h4>
+      </div>
+      <p class="muted">Write crisp updates, align definitions, and make trade-offs visible to stakeholders.</p>
+    </div>
+
+    <!-- NEW 06 -->
+    <div class="miniCard">
+      <div class="miniCard__top">
+        <span class="miniCard__badge">06</span>
+        <h4>Own it end-to-end</h4>
+      </div>
+      <p class="muted">Take responsibility for delivery, quality, and long-term reliability — not just code.</p>
+    </div>
+  </div>
+
+  <!-- Improved focus (no Stack row) -->
+ <div class="valueBox">
+  <div class="valueBox__top">
+    <span class="valueBox__pill">What you’ll get</span>
+    
+  </div>
+
+  <div class="valueGrid">
+    <div class="valueItem">
+      <div class="valueItem__k">Trust</div>
+      <div class="valueItem__v">Validated datasets + clear definitions</div>
+    </div>
+
+    <div class="valueItem">
+      <div class="valueItem__k">Visibility</div>
+      <div class="valueItem__v">Monitoring for freshness, failures, and SLAs</div>
+    </div>
+
+    <div class="valueItem">
+      <div class="valueItem__k">Speed</div>
+      <div class="valueItem__v">Clean tables that power decisions faster</div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+
+    </div>
+  </div>
+</section>
+
+  <!-- ====== Skills ====== -->
+  <section class="section" id="skills">
+  <div class="container">
+    <div class="section__head">
+      <h2 class="section__title">Skills</h2>
+    </div>
+
+    <div class="skillsGrid3">
+
+      <!-- 1) Data Engineering -->
+      <article class="skillCardX">
+        <div class="skillHead">
+          <div class="skillIconSvg">
+    <img src="assets/icons/dataengineering.svg" alt="Data Engineering icon" />
+  </div>
+
+  <!-- TEXT -->
+  <div class="skillText">
+            <h3 class="skillH">Data Engineering</h3>
+            <p class="skillS">Pipelines, orchestration, reliability</p>
+          </div>
+        </div>
+
+        <div class="chipRow">
+          <span class="chip chip--core">SQL</span>
+          <span class="chip chip--core">Python</span>
+          <span class="chip chip--core">Airflow</span>
+          <span class="chip chip--core">Spark / PySpark</span>
+          <span class="chip">Batch + incremental loads</span>
+          <span class="chip">CDC patterns</span>
+          <span class="chip">Backfills & reprocessing</span>
+          <span class="chip">Data modeling (analytics-ready)</span>
+          <span class="chip">Data contracts</span>
+          <span class="chip">Schema evolution</span>
+        </div>
+
+        <div class="miniFoot">
+          <span class="miniTag"><i class="fa-solid fa-check"></i> SLAs</span>
+          <span class="miniTag"><i class="fa-solid fa-bell"></i> Alerts</span>
+          <span class="miniTag"><i class="fa-solid fa-magnifying-glass"></i> RCA</span>
+        </div>
+      </article>
+
+      <!-- 2) Cloud & Warehousing -->
+      <article class="skillCardX">
+        <div class="skillHead">
+          <div class="skillIconSvg">
+    <img src="assets/icons/cloudwarehousing.svg" alt="Cloud Warehousing icon" />
+  </div>
+
+  <!-- TEXT -->
+  <div class="skillText">
+            <h3 class="skillH">Cloud & Warehousing</h3>
+            <p class="skillS">Scalable, cost-aware systems</p>
+          </div>
+        </div>
+
+        <div class="chipRow">
+          <span class="chip chip--core">Snowflake</span>
+          <span class="chip chip--core">AWS (S3, EC2, Glue, Lambda)</span>
+          <span class="chip chip--core">Databricks</span>
+          <span class="chip">CloudWatch monitoring</span>
+          <span class="chip">RDS</span>
+          <span class="chip">Cost optimization</span>
+          <span class="chip">Security basics (IAM)</span>
+          <span class="chip">Azure</span>
+          <span class="chip">GCP</span>
+        </div>
+
+        <div class="miniFoot">
+          <span class="miniTag"><i class="fa-solid fa-bolt"></i> Performance</span>
+          <span class="miniTag"><i class="fa-solid fa-layer-group"></i> Partitioning</span>
+          <span class="miniTag"><i class="fa-solid fa-coins"></i> Cost</span>
+        </div>
+      </article>
+
+      <!-- 3) Analytics, BI & Collaboration -->
+      <article class="skillCardX">
+        <div class="skillHead">
+          <div class="skillIconSvg">
+    <img src="assets/icons/analytics.svg" alt="Analytics icon" />
+  </div>
+
+  <!-- TEXT -->
+  <div class="skillText">
+            <h3 class="skillH">Analytics & Delivery</h3>
+            <p class="skillS">From raw data → decisions</p>
+          </div>
+        </div>
+
+        <div class="chipRow">
+          <span class="chip chip--core">Power BI</span>
+          <span class="chip chip--core">Tableau</span>
+          <span class="chip">Analytics engineering</span>
+          <span class="chip">Metric definitions</span>
+          <span class="chip">Dashboard-ready tables</span>
+          <span class="chip">Data quality checks</span>
+          <span class="chip">Freshness / volume monitoring</span>
+          <span class="chip">REST APIs</span>
+          <span class="chip">Git</span>
+          <span class="chip">Jira</span>
+          <span class="chip">Agile</span>
+          <span class="chip">Stakeholder management</span>
+        </div>
+
+        <div class="miniFoot">
+          <span class="miniTag"><i class="fa-solid fa-handshake"></i> Stakeholders</span>
+          <span class="miniTag"><i class="fa-solid fa-clipboard-check"></i> Requirements</span>
+          <span class="miniTag"><i class="fa-solid fa-rocket"></i> Shipping</span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+  <!-- ====== Experience ====== -->
+  <section class="section" id="experience">
+  <div class="container">
+    <div class="section__head">
+      <h2 class="section__title">Experience</h2>
+    </div>
+
+    <div class="timeline">
+
+      <!-- Optimove -->
+      <div class="tItem">
+        <div class="tDot"></div>
+        <div class="tCard">
+          <div class="tTop">
+            <div>
+              <h3>Customer Data Engineer</h3>
+              <p class="tCompany">Optimove · New York City, NY</p>
+            </div>
+            <span class="tTag">Aug 2024 — Present</span>
+          </div>
+
+          <ul class="list list--compact">
+            <li>Optimized ETL workflows using <b>SQL, Python, and Airflow</b>, improving pipeline efficiency and reducing data delivery time by <b>40%</b>.</li>
+            <li>Partnered with cross-functional teams to translate business requirements and resolve <b>200+</b> data quality issues across <b>10+</b> clients.</li>
+            <li>Built data-quality KPIs and monitoring to detect and resolve <b>50+</b> critical issues, driving a <b>30%</b> reduction in downtime.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- NJIT - Business Development Analyst -->
+      <div class="tItem">
+        <div class="tDot"></div>
+        <div class="tCard">
+          <div class="tTop">
+            <div>
+              <h3>Business Development Analyst (Autonomous Trucking Model)</h3>
+              <p class="tCompany">New Jersey Institute of Technology · Newark, NJ</p>
+            </div>
+            <span class="tTag">Aug 2023 — May 2024</span>
+          </div>
+
+          <ul class="list list--compact">
+            <li>Conducted <b>20+</b> industry interviews to identify market trends and user pain points, informing product decisions.</li>
+            <li>Served as <b>Entrepreneurial Lead</b> for NSF I-Corps; led customer discovery and stakeholder analysis to uncover adoption barriers.</li>
+            <li>Delivered strategic recommendations to shift toward <b>semi-autonomous</b> capabilities aligned with market readiness.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- NJIT - Data Operations Analyst -->
+      <div class="tItem">
+        <div class="tDot"></div>
+        <div class="tCard">
+          <div class="tTop">
+            <div>
+              <h3>Data Operations Analyst</h3>
+              <p class="tCompany">New Jersey Institute of Technology · Newark, NJ</p>
+            </div>
+            <span class="tTag">Jun 2023 — Aug 2023</span>
+          </div>
+
+          <ul class="list list--compact">
+            <li>Led an insurance provider transition and coordinated UAT across <b>3</b> implementation phases to ensure smooth rollout.</li>
+            <li>Created <b>50+</b> scripts for NJIT’s DegreeWorks platform, improving course enrollment efficiency and reducing scheduling errors.</li>
+            <li>Designed an ERD for the summer program student database, improving data retrieval speed by <b>25%</b> and reducing redundancy.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- NJIT - Financial Data Analyst -->
+      <div class="tItem">
+        <div class="tDot"></div>
+        <div class="tCard">
+          <div class="tTop">
+            <div>
+              <h3>Financial Data Analyst (CSR & Financial Performance)</h3>
+              <p class="tCompany">New Jersey Institute of Technology · Newark, NJ</p>
+            </div>
+            <span class="tTag">Mar 2023 — Jun 2023</span>
+          </div>
+
+          <ul class="list list--compact">
+            <li>Analyzed ESG datasets for <b>200+</b> companies using statistical methods to identify trends and generate CSR insights.</li>
+            <li>Curated and categorized <b>1,000+</b> keywords and assessed polarity to enable targeted narrative and performance analysis.</li>
+            <li>Built <b>40+</b> interactive dashboards in <b>Power BI</b> and <b>Tableau</b> to monitor KPIs for stakeholders.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Faces Canada -->
+      <div class="tItem">
+        <div class="tDot"></div>
+        <div class="tCard">
+          <div class="tTop">
+            <div>
+              <h3>Supply Chain Data Analyst</h3>
+              <p class="tCompany">Faces Canada · India</p>
+            </div>
+            <span class="tTag">Jan 2021 — Jul 2021</span>
+          </div>
+
+          <ul class="list list--compact">
+            <li>Analyzed ERP data for <b>500+</b> orders, identified inaccuracies, and improved fulfillment accuracy via centralized inventory workflow.</li>
+            <li>Designed automation strategies that streamlined warehouse operations, saving <b>50+</b> hours per month.</li>
+            <li>Improved order fulfillment and inventory tracking, reducing holding costs by <b>15%</b> through tighter packing and stock controls.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+  <!-- ====== Education ====== -->
+  <section class="section" id="education">
+  <div class="container">
+    <div class="section__head">
+      <h2 class="section__title">Education</h2>
+    </div>
+
+    <div class="eduGrid">
+
+      <!-- NJIT -->
+      <article class="eduCard">
+        <div class="eduTop">
+          <div class="eduLogo">
+            <img src="assets/logos/njit.png" alt="NJIT logo" />
+          </div>
+          <div class="eduText">
+            <h3 class="eduDegree">M.S. Information Systems</h3>
+            <p class="eduSchool muted">New Jersey Institute of Technology</p>
+          </div>
+        </div>
+
+       <div class="eduMeta">
+  <div class="metaRow">
+    <span class="metaK">GPA</span>
+    <span class="metaV">3.95 / 4.0</span>
+  </div>
+
+  <div class="metaRow">
+    <span class="metaK">Focus</span>
+    <span class="metaV">Data • Analytics • Cloud</span>
+  </div>
+</div>
+      </article>
+
+      <!-- PEC -->
+      <article class="eduCard">
+        <div class="eduTop">
+          <div class="eduLogo">
+            <img src="assets/logos/pec.webp" alt="PEC logo" />
+          </div>
+          <div class="eduText">
+            <h3 class="eduDegree">B.E. Electronics & Communication</h3>
+            <p class="eduSchool muted">Punjab Engineering College</p>
+          </div>
+        </div>
+
+       <div class="eduMeta">
+  <div class="metaRow">
+    <span class="metaK">GPA</span>
+    <span class="metaV">3.70 / 4.0</span>
+  </div>
+
+  <div class="metaRow">
+    <span class="metaK">Strength</span>
+    <span class="metaV">Systems • Problem-solving</span>
+  </div>
+</div>
+
+      </article>
+
+      <!-- Certifications -->
+      <article class="eduCard eduCard--soft">
+        <div class="eduTop">
+          <div class="eduLogo">
+         <img src="assets/logos/certificate.svg" alt="Certifications" />
+          </div>
+
+          <div class="eduText">
+            <h3 class="eduDegree">Certifications</h3>
+            <p class="eduSchool muted">Hands-on credentials across data + analytics.</p>
+          </div>
+        </div>
+
+        <div class="certList">
+          <div class="certItem">
+            <span class="certDot"></span>
+            <span class="certName">IBM Big Data</span>
+          </div>
+          <div class="certItem">
+            <span class="certDot"></span>
+            <span class="certName">BCG GenAI</span>
+          </div>
+          <div class="certItem">
+            <span class="certDot"></span>
+            <span class="certName">PwC Power BI</span>
+          </div>
+          <div class="certItem">
+            <span class="certDot"></span>
+            <span class="certName">Accenture / KPMG Analytics</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+  <!-- ====== Projects ====== -->
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section__head">
+        <h2 class="section__title">Projects</h2>
+      </div>
+
+      <div class="projects">
+        <!-- Projects -->
+
+<article class="pCard">
+  <div class="pThumb pThumb--img">
+  <img src="assets/img/taskmanagementapp.jpg" alt="Task Management Application preview" loading="lazy">
+</div>
+
+  <div class="pBody">
+    <h3>Task Management Application</h3>
+    <span class="br"></span>
+    <p class="muted">
+      User-focused task tracking application designed for clean workflows and usability.
+    </p>
+    <div class="pTags">
+      <span class="pill">UX</span>
+      <span class="pill">Product</span>
+      <span class="pill">Full-Stack</span>
+    </div>
+    <div class="pActions">
+      <a class="btn btn--primary btn--sm"
+         href="https://github.com/PiyushaSayal/ProjectRepository/tree/main/Task%20Management%20App%20(User%20Experience)"
+         target="_blank">Project Link</a>
+    </div>
+  </div>
+</article>
+
+<article class="pCard">
+  <div class="pThumb pThumb--img">
+  <img src="assets/img/makeup.jpg" alt="Makeup & Skincare preview" loading="lazy">
+</div>
+  <div class="pBody">
+    <h3>Makeup & Skincare E-Commerce</h3>
+    <span class="br"></span>
+    <p class="muted">
+      E-commerce experience showcasing product discovery, UI flows, and checkout journeys.
+    </p>
+    <div class="pTags">
+      <span class="pill">E-Commerce</span>
+      <span class="pill">UI</span>
+      <span class="pill">Demo</span>
+    </div>
+    <div class="pActions">
+      <a class="btn btn--primary btn--sm"
+         href="https://youtu.be/SYDZugaVj6E?feature=shared"
+         target="_blank">Project Link</a>
+    </div>
+  </div>
+</article>
+
+<article class="pCard">
+  <div class="pThumb pThumb--img">
+  <img src="assets/img/supervisedml.jpg" alt="Supervised ML preview" loading="lazy">
+</div>
+  <div class="pBody">
+    <h3>Supervised Machine Learning Implementation</h3>
+    <p class="muted">
+      Applied supervised learning models with feature analysis and performance evaluation.
+    </p>
+    <div class="pTags">
+      <span class="pill">ML</span>
+      <span class="pill">Python</span>
+      <span class="pill">Analytics</span>
+    </div>
+    <div class="pActions">
+      <a class="btn btn--primary btn--sm"
+         href="https://github.com/PiyushaSayal/ProjectRepository/tree/main/Supervised%20Machine%20Learning"
+         target="_blank">Project Link</a>
+    </div>
+  </div>
+</article>
+
+<article class="pCard">
+  <div class="pThumb pThumb--img">
+  <img src="assets/img/braintumor.jpg" alt="Brain Tumor Detection" loading="lazy">
+</div>
+  <div class="pBody">
+    <h3>Brain Tumor Detection Using CNN</h3>
+    <p class="muted">
+      Deep learning pipeline using CNNs for medical image classification and detection.
+    </p>
+    <div class="pTags">
+      <span class="pill">CNN</span>
+      <span class="pill">Deep Learning</span>
+      <span class="pill">Computer Vision</span>
+    </div>
+    <div class="pActions">
+      <a class="btn btn--primary btn--sm"
+         href="https://github.com/PiyushaSayal/ProjectRepository/tree/main/Brain%20Tumor%20Detection%20Using%20CNN"
+         target="_blank">Project Link</a>
+    </div>
+  </div>
+</article>
+
+<article class="pCard">
+  <div class="pThumb pThumb--img">
+  <img src="assets/img/fastapi.jpg" alt="Fast API" loading="lazy">
+</div>
+  <div class="pBody">
+    <h3>FastAPI: Capture Day-to-Day Events</h3>
+    <p class="muted">
+      Backend API built with FastAPI to log and manage daily events via REST endpoints.
+    </p>
+    <div class="pTags">
+      <span class="pill">FastAPI</span>
+      <span class="pill">REST</span>
+      <span class="pill">Backend</span>
+    </div>
+    <div class="pActions">
+      <a class="btn btn--primary btn--sm"
+         href="https://github.com/PiyushaSayal/ProjectRepository/tree/main/fastapievents/src"
+         target="_blank">Project Link</a>
+    </div>
+  </div>
+</article>
+
+<article class="pCard">
+  <div class="pThumb pThumb--img">
+  <img src="assets/img/netflixdashboard.jpg" alt="Netflix Dashboard" loading="lazy">
+</div>
+  <div class="pBody">
+    <h3>Netflix Analytics Dashboard</h3>
+    <span class="br"></span>
+    <p class="muted">
+      Interactive Power BI dashboard analyzing Netflix content and viewing trends.
+    </p>
+    <div class="pTags">
+      <span class="pill">Power BI</span>
+      <span class="pill">Dashboard</span>
+      <span class="pill">Insights</span>
+    </div>
+    <div class="pActions">
+      <a class="btn btn--primary btn--sm"
+         href="https://github.com/PiyushaSayal/ProjectRepository/blob/main/Netflix%20Visualization%20Board/Netflix%20Visualization%20Dashboard.pbix"
+         target="_blank">Project Link</a>
+    </div>
+  </div>
+</article>
+
+<article class="pCard">
+ <div class="pThumb pThumb--img">
+  <img src="assets/img/pyspark.jpg" alt="Pyspark" loading="lazy">
+</div>
+  <div class="pBody">
+    <h3>Scalable Data Processing with PySpark</h3>
+    <p class="muted">
+      End-to-end big data pipeline for scalable processing and analytics using PySpark.
+    </p>
+    <div class="pTags">
+      <span class="pill">PySpark</span>
+      <span class="pill">ETL</span>
+      <span class="pill">Big Data</span>
+    </div>
+    <div class="pActions">
+      <a class="btn btn--primary btn--sm"
+         href="https://github.com/PiyushaSayal/ProjectRepository/tree/main/Scalable%20Data%20Processing%20and%20Analysis%20with%20PySpark%3A%20An%20End-to-End%20Pipeline"
+         target="_blank">Project Link</a>
+    </div>
+  </div>
+</article>
+
+<article class="pCard">
+  <div class="pThumb pThumb--img">
+  <img src="assets/img/covid19.jpg" alt="Covid 19" loading="lazy">
+</div>
+  <div class="pBody">
+    <h3>COVID-19 Data Analysis</h3>
+    <span class="br"></span>
+    <p class="muted">
+      Exploratory analysis and visualization of global COVID-19 datasets.
+    </p>
+    <div class="pTags">
+      <span class="pill">EDA</span>
+      <span class="pill">Python</span>
+      <span class="pill">Visualization</span>
+    </div>
+    <div class="pActions">
+      <a class="btn btn--primary btn--sm"
+         href="https://github.com/PiyushaSayal/ProjectRepository/tree/main/Covid-19%20Data%20Analysis"
+         target="_blank">Project Link</a>
+    </div>
+  </div>
+</article>
+
+<article class="pCard">
+  <div class="pThumb pThumb--img">
+  <img src="assets/img/customerretention.jpg" alt="Customer Retention" loading="lazy">
+</div>
+  <div class="pBody">
+    <h3>Customer Retention Dashboard</h3>
+    <span class="br"></span>
+    <p class="muted">
+      KPI-driven Power BI dashboard analyzing churn and customer retention patterns.
+    </p>
+    <div class="pTags">
+      <span class="pill">Power BI</span>
+      <span class="pill">KPIs</span>
+      <span class="pill">Business</span>
+    </div>
+    <div class="pActions">
+      <a class="btn btn--primary btn--sm"
+         href="https://github.com/PiyushaSayal/ProjectRepository/blob/main/PWC%20PowerBI%20Virtual%20Internship/Customer_Retention_Piyusha%20Sayal.pbix"
+         target="_blank">Project Link</a>
+    </div>
+  </div>
+</article>
+
+<article class="pCard">
+  <div class="pThumb pThumb--img">
+    <img src="assets/img/diversity.png" alt="Diversity Inclusion Dashboard" loading="lazy">
+  </div>
+  <div class="pBody">
+    <h3>Diversity Inclusion Dashboard</h3>
+    <span class="br"></span>
+    <p class="muted">
+      Power BI dashboard analyzing diversity, inclusion, and workforce equity metrics.
+    </p>
+    <div class="pTags">
+      <span class="pill">Power BI</span>
+      <span class="pill">Analytics</span>
+      <span class="pill">Visualization</span>
+    </div>
+    <div class="pActions">
+      <a class="btn btn--primary btn--sm"
+         href="https://github.com/PiyushaSayal/ProjectRepository/blob/main/PWC%20PowerBI%20Virtual%20Internship/Diversity_Inclusion.pbix"
+         target="_blank">Project Link</a>
+    </div>
+  </div>
+</article>
+
+<article class="pCard">
+  <div class="pThumb pThumb--img">
+    <img src="assets/img/CallCenter.jpg" alt="Call Center Trends Dashboard" loading="lazy">
+  </div>
+  <div class="pBody">
+    <h3>Call Center Trends Dashboard</h3>
+    <p class="muted">
+      Interactive Power BI dashboard uncovering call volume, agent performance, and service trends.
+    </p>
+    <div class="pTags">
+      <span class="pill">Power BI</span>
+      <span class="pill">Operations</span>
+      <span class="pill">Analytics</span>
+    </div>
+    <div class="pActions">
+      <a class="btn btn--primary btn--sm"
+         href="https://github.com/PiyushaSayal/ProjectRepository/blob/main/PWC%20PowerBI%20Virtual%20Internship/Call%20Centre%20Trends.pbix"
+         target="_blank">Project Link</a>
+    </div>
+  </div>
+</article>
+
+<article class="pCard">
+  <div class="pThumb pThumb--img">
+    <img src="assets/img/SpaceAlpha.jpg" alt="Space Alpha Project" loading="lazy">
+  </div>
+  <div class="pBody">
+    <h3>Space-Alpha</h3>
+    <p class="muted">
+      Hackathon project focused on space data exploration and intelligent analytics solutions.
+    </p>
+    <div class="pTags">
+      <span class="pill">Hackathon</span>
+      <span class="pill">Data</span>
+      <span class="pill">Innovation</span>
+    </div>
+    <div class="pActions">
+      <a class="btn btn--primary btn--sm"
+         href="https://devpost.com/software/space-alpha"
+         target="_blank">Project Link</a>
+    </div>
+  </div>
+</article>
+
+
+<article class="pCard">
+  <div class="pThumb pThumb--img">
+    <img src="assets/img/Coalsea.jpg" alt="CoalSea Project" loading="lazy">
+  </div>
+  <div class="pBody">
+    <h3>CoalSea</h3>
+    <p class="muted">
+      Sustainability-focused analytics project developed during a global innovation hackathon.
+    </p>
+    <div class="pTags">
+      <span class="pill">Hackathon</span>
+      <span class="pill">Sustainability</span>
+      <span class="pill">Analytics</span>
+    </div>
+    <div class="pActions">
+      <a class="btn btn--primary btn--sm"
+         href="https://devpost.com/software/coalsea"
+         target="_blank">Project Link</a>
+    </div>
+  </div>
+</article>
+
+<article class="pCard">
+  <div class="pThumb pThumb--img">
+    <img src="assets/img/cric.jpg" alt="Cricket Analysis Dashboard" loading="lazy">
+  </div>
+  <div class="pBody">
+    <h3>Cricket Analysis Dashboard</h3>
+    <p class="muted">
+      Sports analytics dashboard analyzing player performance and match trends using Power BI.
+    </p>
+    <div class="pTags">
+      <span class="pill">Power BI</span>
+      <span class="pill">Analytics</span>
+      <span class="pill">Visualization</span>
+    </div>
+    <div class="pActions">
+      <a class="btn btn--primary btn--sm"
+         href="https://github.com/PiyushaSayal/ProjectRepository/blob/main/CricketAnalysisDashboard/cricanalysis.pbix"
+         target="_blank">Project Link</a>
+    </div>
+  </div>
+</article>
+
+<article class="pCard">
+  <div class="pThumb pThumb--img">
+    <img src="assets/img/genai.jpeg" alt="BCG Generative AI Chatbot" loading="lazy">
+  </div>
+  <div class="pBody">
+    <h3>BCG: Generative AI Chatbot</h3>
+    <span class="br"></span>
+    <p class="muted">
+      Python-based GenAI chatbot developed as part of BCG’s virtual internship program.
+    </p>
+    <div class="pTags">
+      <span class="pill">Python</span>
+      <span class="pill">GenAI</span>
+      <span class="pill">NLP</span>
+    </div>
+    <div class="pActions">
+      <a class="btn btn--primary btn--sm"
+         href="https://github.com/PiyushaSayal/ProjectRepository/tree/main/BCG%20Virtual%20Internship%20(GenAI)"
+         target="_blank">Project Link</a>
+    </div>
+  </div>
+</article>
+
+
+<article class="pCard">
+  <div class="pThumb pThumb--img">
+    <img src="assets/img/accenture.jpg" alt="Accenture Data Analytics Project" loading="lazy">
+  </div>
+  <div class="pBody">
+    <h3>Accenture: Data Analytics & Visualization</h3>
+    <p class="muted">
+      Business analytics and visualization project completed during Accenture virtual internship.
+    </p>
+    <div class="pTags">
+      <span class="pill">Analytics</span>
+      <span class="pill">Visualization</span>
+      <span class="pill">Consulting</span>
+    </div>
+    <div class="pActions">
+      <a class="btn btn--primary btn--sm"
+         href="https://github.com/PiyushaSayal/ProjectRepository/tree/main/Accenture%20Virtual%20Internship%20(Data%20Analytics)"
+         target="_blank">Project Link</a>
+    </div>
+  </div>
+</article>
+
+<article class="pCard">
+  <div class="pThumb pThumb--img">
+    <img src="assets/img/datavis.png" alt="Tata Online Retail Dashboard" loading="lazy">
+  </div>
+  <div class="pBody">
+    <h3>Tata: Online Retail Store Dashboard</h3>
+    <span class="br"></span>
+    <p class="muted">
+      Data visualization project analyzing online retail performance and customer behavior.
+    </p>
+    <div class="pTags">
+      <span class="pill">Data Visualization</span>
+      <span class="pill">Retail</span>
+      <span class="pill">Analytics</span>
+    </div>
+    <div class="pActions">
+      <a class="btn btn--primary btn--sm"
+         href="https://github.com/PiyushaSayal/ProjectRepository/tree/main/Tata%20Virtual%20Internship%20(Data%20Visualization)"
+         target="_blank">Project Link</a>
+    </div>
+  </div>
+</article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== Contact ====== -->
+  <section class="section" id="contact">
+  <div class="container">
+    <div class="contactHero">
+
+      <!-- LEFT: Social dock -->
+      <aside class="socialDock" aria-label="Social links">
+
+        <a class="dockBtn is-accent" href="mailto:piyusha.2510@gmail.com" title="Email" aria-label="Email">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+
+        <a class="dockBtn" href="https://www.linkedin.com/in/piyusha-sayal" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+
+        <a class="dockBtn" href="https://github.com/piyusha-sayal" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub">
+          <i class="fa-brands fa-github"></i>
+        </a>
+
+        <a class="dockBtn" href="#about" title="About" aria-label="About">
+          <i class="fa-solid fa-circle-info"></i>
+        </a>
+      </aside>
+
+      <!-- CENTER: Form -->
+      <div class="talkCard">
+        <h2 class="talkTitle">Let’s <span>talk</span></h2>
+        <p class="talkSub">
+          Want to collaborate or have a role in mind? Send a message — I’ll reply soon.
+        </p>
+
+        <form class="talkForm" action="https://formsubmit.co/piyusha.2510@gmail.com" method="POST" data-ajax="true">
+          <!-- FormSubmit config -->
+          <input type="hidden" name="_subject" value="New message from portfolio" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+
+          <label class="talkLabel" for="t_name">Your Name</label>
+          <input id="t_name" name="name" class="talkInput" type="text" placeholder="Your name" required />
+
+          <label class="talkLabel" for="t_email">Your Email</label>
+          <input id="t_email" name="email" class="talkInput" type="email" placeholder="your@email.com" required />
+
+          <label class="talkLabel" for="t_msg">Your Message</label>
+          <textarea id="t_msg" name="message" class="talkArea" rows="6" placeholder="Type your message here..." required></textarea>
+
+          <button class="talkBtn" type="submit">
+            <span class="btn__text">Send message</span>
+            <span class="btn__spinner" aria-hidden="true"></span>
+          </button>
+
+          <div class="formToast" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+
+      <!-- RIGHT: Photo slot (you will replace image) -->
+      <div class="talkVisual" aria-hidden="true">
+        <div class="blob"></div>
+        <img class="talkImg" src="assets/img/contact-photo.svg" alt="Piyusha Sayal" />
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- Back to top floating -->
+<footer class="siteFooter">
+  <div class="footerInner">
+    <div class="footerLeft">
+      <span class="footerName">Piyusha Sayal | Data Engineer</span>
+    </div>
+
+    <div class="footerCenter">
+      <span>© <span id="year"></span> All rights reserved</span>
+    </div>
+
+    <div class="footerRight">
+      <button class="toTop" type="button" aria-label="Back to top">Back to Top ↑</button>
+
+    </div>
+  </div>
+</footer>
+
+
+  <script src="./app.js"></script>
+</body>
+</html>
