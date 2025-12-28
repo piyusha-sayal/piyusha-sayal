@@ -2304,3 +2304,48 @@ svg{
     height: 2px !important;
   }
 }
+
+/* ✅ Phone: make buttons pop more (no desktop change) */
+@media (max-width: 980px){
+
+  .hero__actions .btn{
+    background: rgba(255,255,255,.07) !important;
+    border-color: rgba(255,255,255,.18) !important;
+    box-shadow: 0 14px 34px rgba(0,0,0,.45) !important;
+  }
+
+  .hero__actions .btn--primary{
+    background: linear-gradient(180deg, rgba(255,122,24,.55), rgba(255,77,0,.30)) !important;
+    border-color: rgba(255,122,24,.65) !important;
+    box-shadow: 0 16px 40px rgba(255,122,24,.18), 0 18px 55px rgba(0,0,0,.55) !important;
+  }
+
+  .hero__actions .btn:active{
+    transform: translateY(1px) !important;
+  }
+
+  /* Optional: improve text contrast on mobile */
+  .hero__actions .btn{
+    color: rgba(255,255,255,.95) !important;
+  }
+}
+/* ✅ Phone: make ALL buttons pop (no desktop change) */
+@media (max-width: 980px){
+
+  .btn{
+    background: rgba(255,255,255,.07) !important;
+    border-color: rgba(255,255,255,.18) !important;
+    box-shadow: 0 14px 34px rgba(0,0,0,.45) !important;
+    color: rgba(255,255,255,.95) !important;
+  }
+
+  .btn--primary{
+    background: linear-gradient(180deg, rgba(255,122,24,.55), rgba(255,77,0,.30)) !important;
+    border-color: rgba(255,122,24,.65) !important;
+    box-shadow: 0 16px 40px rgba(255,122,24,.18), 0 18px 55px rgba(0,0,0,.55) !important;
+  }
+
+  .btn:active{
+    transform: translateY(1px) !important;
+  }
+}

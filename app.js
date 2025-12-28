@@ -1,11 +1,14 @@
 /* =========================================================
-   app.js (FINAL)
-   - Mobile menu (toggle + outside click + ESC)
-   - ✅ Phone: lock background scroll when hamburger is open
-   - Smooth scroll for in-page links (offset-aware)
-   - Active nav highlight (FIXED: none highlighted at top)
-   - Back to top button (supports .toTop OR .back-to-top)
-   - Contact form via FormSubmit (AJAX + inline toast + loading state)
+   app.js (MULTI-PAGE FINAL)
+   - Mobile menu (toggle + outside click)
+   - ✅ Lock background scroll on phone when menu open
+   - Smooth scroll for in-page links (index.html#... works without reload on index)
+   - Active nav highlight:
+       - ✅ index: highlight based on scroll, none at very top
+       - ✅ experience.html: experience active
+       - ✅ projects.html: projects active
+   - Back to top button (smooth)
+   - Contact form via FormSubmit (AJAX)
    - Hero rotating word
 ========================================================= */
 
@@ -13,70 +16,54 @@
   const qs = (s, el = document) => el.querySelector(s);
   const qsa = (s, el = document) => [...el.querySelectorAll(s)];
 
-  const isPhone = () => window.matchMedia("(max-width: 980px)").matches;
+  const toggle = qs(".nav__toggle");
+  const menu = qs(".nav__menu");
+  const links = qsa(".nav__link");
+
+  const isMobile = () => window.matchMedia("(max-width: 980px)").matches;
 
   /* =========================
-     Mobile menu + ✅ body scroll lock on phone
+     ✅ Scroll lock (mobile menu)
   ========================= */
-  const toggle = qs(".nav__toggle");
-  const menu = qs("#navMenu") || qs(".nav__menu");
-  const links = qsa(".nav__link");
-  const nav = qs(".nav");
+  let lockY = 0;
 
-  // Robust scroll lock (works well on iOS too)
-  let __scrollY = 0;
-  const lockScroll = () => {
-    if (!isPhone()) return;
-    __scrollY = window.scrollY || 0;
+  function lockScroll() {
+    lockY = window.scrollY || 0;
     document.body.style.position = "fixed";
-    document.body.style.top = `-${__scrollY}px`;
+    document.body.style.top = `-${lockY}px`;
     document.body.style.left = "0";
     document.body.style.right = "0";
     document.body.style.width = "100%";
-    document.body.style.overflow = "hidden";
-  };
+  }
 
-  const unlockScroll = () => {
+  function unlockScroll() {
     document.body.style.position = "";
     document.body.style.top = "";
     document.body.style.left = "";
     document.body.style.right = "";
     document.body.style.width = "";
-    document.body.style.overflow = "";
-    if (isPhone()) window.scrollTo(0, __scrollY || 0);
-  };
-
-  function closeMenu() {
-    if (!menu) return;
-    menu.classList.remove("open");
-    toggle?.setAttribute("aria-expanded", "false");
-    unlockScroll();
+    window.scrollTo(0, lockY);
   }
 
   function openMenu() {
     if (!menu) return;
     menu.classList.add("open");
     toggle?.setAttribute("aria-expanded", "true");
-    lockScroll();
+    if (isMobile()) lockScroll();
   }
 
-  function toggleMenu() {
-    if (!menu || !toggle) return;
-    const willOpen = !menu.classList.contains("open");
-    willOpen ? openMenu() : closeMenu();
+  function closeMenu() {
+    if (!menu) return;
+    menu.classList.remove("open");
+    toggle?.setAttribute("aria-expanded", "false");
+    if (isMobile()) unlockScroll();
   }
 
-  toggle?.addEventListener("click", (e) => {
-    e.preventDefault();
-    toggleMenu();
+  toggle?.addEventListener("click", () => {
+    if (!menu) return;
+    const open = !menu.classList.contains("open");
+    open ? openMenu() : closeMenu();
   });
-
-  // close when clicking any link (phone)
-  links.forEach((a) =>
-    a.addEventListener("click", () => {
-      if (isPhone()) closeMenu();
-    })
-  );
 
   // close on outside click
   document.addEventListener("click", (e) => {
@@ -88,136 +75,132 @@
 
   // close on ESC
   document.addEventListener("keydown", (e) => {
-    if (e.key !== "Escape") return;
-    if (menu?.classList.contains("open")) closeMenu();
+    if (e.key === "Escape" && menu?.classList.contains("open")) closeMenu();
   });
 
-  // if resized to desktop, ensure unlocked + menu closed
-  window.addEventListener(
-    "resize",
-    () => {
-      if (!isPhone()) {
-        closeMenu();
-        unlockScroll();
-      }
-    },
-    { passive: true }
-  );
-
   /* =========================
-     Smooth scroll (offset-aware)
+     Smooth scroll (index only)
+     - Works for href="#x"
+     - Works for href="index.html#x" without reloading when already on index
   ========================= */
-  const navLinks = links.filter((a) => (a.getAttribute("href") || "").startsWith("#"));
+  const page = (location.pathname.split("/").pop() || "index.html").toLowerCase();
+  const onIndex = page === "index.html" || page === "";
 
-  const getNavH = () => {
-    // Prefer CSS var if present, otherwise measure actual nav height
-    const cssVar = getComputedStyle(document.documentElement).getPropertyValue("--navH").trim();
-    const parsed = parseInt(cssVar, 10);
-    if (Number.isFinite(parsed) && parsed > 0) return parsed;
-    return nav ? Math.round(nav.getBoundingClientRect().height) : 68;
-  };
+  function smoothToHash(hash) {
+    const id = (hash || "").replace("#", "");
+    if (!id) return false;
+    const target = qs(`#${CSS.escape(id)}`);
+    if (!target) return false;
 
-  function smoothScrollToTarget(targetEl) {
-    const navH = getNavH();
-    const y = targetEl.getBoundingClientRect().top + window.scrollY - navH + 8; // +8 for breathing room
-    window.scrollTo({ top: y, behavior: "smooth" });
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+    history.replaceState(null, "", `#${id}`);
+    return true;
   }
 
-  navLinks.forEach((a) => {
-    const href = a.getAttribute("href");
+  links.forEach((a) => {
     a.addEventListener("click", (e) => {
-      const target = qs(href);
-      if (!target) return;
-      e.preventDefault();
-      smoothScrollToTarget(target);
-      history.replaceState(null, "", href);
+      const href = a.getAttribute("href") || "";
+
+      // on index: intercept both "#x" AND "index.html#x"
+      if (onIndex) {
+        if (href.startsWith("#")) {
+          if (smoothToHash(href)) {
+            e.preventDefault();
+            if (isMobile()) closeMenu();
+          }
+          return;
+        }
+        if (href.startsWith("index.html#")) {
+          const hash = "#" + href.split("#")[1];
+          if (smoothToHash(hash)) {
+            e.preventDefault();
+            if (isMobile()) closeMenu();
+          }
+          return;
+        }
+      }
+
+      // on other pages: allow normal navigation
+      if (isMobile()) closeMenu();
     });
   });
 
   /* =========================
-     Active nav highlight (none at top)
+     Active nav highlight (multi-page)
   ========================= */
-  const sections = ["about", "skills", "experience", "education", "projects", "contact"]
-    .map((id) => qs(`#${id}`))
-    .filter(Boolean);
+  const navEls = qsa(".nav__link[data-nav]");
+  const navByKey = new Map(navEls.map((el) => [el.dataset.nav, el]));
+  const clearActive = () => navByKey.forEach((el) => el.classList.remove("is-active"));
 
-  const navById = new Map(navLinks.map((a) => [a.getAttribute("href").slice(1), a]));
-
-  const clearActive = () => navById.forEach((el) => el.classList.remove("is-active"));
-
-  const setActive = (id) => {
+  const setActive = (key) => {
     clearActive();
-    if (id && navById.get(id)) navById.get(id).classList.add("is-active");
+    if (key && navByKey.get(key)) navByKey.get(key).classList.add("is-active");
   };
 
-  // Click: update immediately
-  navLinks.forEach((a) => {
-    a.addEventListener("click", () => setActive(a.getAttribute("href").slice(1)));
-  });
-
-  // Rule: if you're near the very top, nothing is highlighted
-  const TOP_CLEAR_PX = 140;
-
-  const pickByScroll = () => {
-    if (window.scrollY <= TOP_CLEAR_PX) {
-      clearActive();
-      return;
-    }
-    const y = window.scrollY + getNavH() + 80; // bias for fixed navbar
-    let current = "";
-
-    for (const sec of sections) {
-      if (sec.offsetTop <= y) current = sec.id;
-    }
-    if (current) setActive(current);
-  };
-
-  if (sections.length && navById.size) {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (window.scrollY <= TOP_CLEAR_PX) {
-          clearActive();
-          return;
-        }
-        const best = entries
-          .filter((e) => e.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-        if (best) setActive(best.target.id);
-      },
-      {
-        root: null,
-        rootMargin: "-35% 0px -55% 0px",
-        threshold: [0.12, 0.2, 0.3, 0.45, 0.6],
-      }
-    );
-    sections.forEach((s) => observer.observe(s));
+  // ✅ Static highlight for dedicated pages
+  if (!onIndex) {
+    if (page.includes("experience")) setActive("experience");
+    if (page.includes("projects")) setActive("projects");
   }
 
-  pickByScroll();
-  window.addEventListener("scroll", pickByScroll, { passive: true });
-  window.addEventListener("resize", pickByScroll, { passive: true });
+  // ✅ Scroll-based highlight for index (none at top)
+  if (onIndex) {
+    const ids = ["about", "skills", "education", "contact"];
+    const sections = ids.map((id) => qs(`#${id}`)).filter(Boolean);
+
+    const TOP_CLEAR_PX = 140;
+
+    const pickByScroll = () => {
+      if (window.scrollY <= TOP_CLEAR_PX) {
+        clearActive();
+        return;
+      }
+      const y = window.scrollY + 160;
+      let current = "";
+      for (const sec of sections) {
+        if (sec.offsetTop <= y) current = sec.id;
+      }
+      if (current) setActive(current);
+    };
+
+    if (sections.length) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          if (window.scrollY <= TOP_CLEAR_PX) {
+            clearActive();
+            return;
+          }
+          const best = entries
+            .filter((e) => e.isIntersecting)
+            .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+          if (best) setActive(best.target.id);
+        },
+        { root: null, rootMargin: "-35% 0px -55% 0px", threshold: [0.12, 0.2, 0.35, 0.55] }
+      );
+
+      sections.forEach((s) => observer.observe(s));
+    }
+
+    pickByScroll();
+    window.addEventListener("scroll", pickByScroll, { passive: true });
+    window.addEventListener("resize", pickByScroll, { passive: true });
+  }
 
   /* =========================
-     Back to top (supports both class names)
+     Back to top (smooth)
   ========================= */
-  const toTop = qs(".toTop") || qs(".back-to-top");
+  const toTop = qs(".toTop");
 
   const toggleTop = () => {
     if (!toTop) return;
-    const show = window.scrollY > 700;
-
-    // support both styles
-    toTop.classList.toggle("show", show);
-    toTop.classList.toggle("is-visible", show);
+    toTop.classList.toggle("show", window.scrollY > 700);
   };
-
   window.addEventListener("scroll", toggleTop, { passive: true });
   toggleTop();
 
   toTop?.addEventListener("click", (e) => {
     e.preventDefault();
     closeMenu();
-
     window.scrollTo({ top: 0, behavior: "smooth" });
     setTimeout(() => clearActive(), 350);
   });
@@ -278,6 +261,7 @@
 
   /* =========================
      Hero rotating word
+     (runs only if element exists)
   ========================= */
   const rotateEl = document.getElementById("rotateWord");
 

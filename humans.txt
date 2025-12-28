@@ -1,0 +1,10 @@
+/* TEAM */
+Name: Piyusha Sayal
+Role: Data Engineer
+Site: https://piyushasayal.com/
+
+/* SITE */
+Language: English
+Doctype: HTML5
+Components: Open Graph, Twitter Cards, JSON-LD (Schema.org), PWA Manifest
+Tools: HTML, CSS, JavaScript
