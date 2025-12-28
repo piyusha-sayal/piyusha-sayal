@@ -25,27 +25,36 @@
 
 <body id="top">
   <!-- ====== Navbar ====== -->
-  <header class="nav" id="top">
-    <div class="container nav__inner">
-      <a class="brand" href="#top">
-        <span class="brand__dot"></span>
-        <span class="brand__name">Piyusha <span class="brand__accent">Sayal</span></span>
-      </a>
+ <header class="nav" id="top">
+  <div class="container nav__inner">
+    <a class="brand" href="#top" aria-label="Go to top">
+      <img class="brand__logo" src="./assets/img/favicon.png" alt="Piyusha Sayal logo" />
+      <span class="brand__name">Piyusha <span class="brand__accent">Sayal</span></span>
+    </a>
 
-      <button class="nav__toggle" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+    <!-- Mobile hamburger -->
+    <button
+      class="nav__toggle"
+      type="button"
+      aria-label="Open menu"
+      aria-expanded="false"
+      aria-controls="navMenu"
+    >
+      <span></span><span></span><span></span>
+    </button>
 
-      <nav class="nav__menu" aria-label="Primary">
-        <a class="nav__link" href="#about">About</a>
-        <a class="nav__link" href="#skills">Skills</a>
-        <a class="nav__link" href="#experience">Experience</a>
-        <a class="nav__link" href="#education">Education</a>
-        <a class="nav__link" href="#projects">Projects</a>
-        <a class="nav__link nav__cta" href="#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
+    <!-- Menu -->
+    <nav class="nav__menu" id="navMenu" aria-label="Primary">
+      <a class="nav__link" href="#about">About</a>
+      <a class="nav__link" href="#skills">Skills</a>
+      <a class="nav__link" href="#experience">Experience</a>
+      <a class="nav__link" href="#education">Education</a>
+      <a class="nav__link" href="#projects">Projects</a>
+      <a class="nav__link nav__cta" href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
 
   <!-- ====== Hero ====== -->
   <section class="hero top">
@@ -78,7 +87,7 @@
   View Resume
 </a>
 
-          <a class="btn" href="#contact">Contact</a>
+          <a class="btn btn--ghost" href="#contact">Contact</a>
         </div>
 
         <div class="hero__chips">
@@ -94,7 +103,7 @@
         <div class="avatar">
   <div class="avatar__ring">
     <div class="avatar__disc">
-      <img src="./assets/img/img-piyusha.jpeg" alt="Profile photo" />
+      <img src="./assets/img/contact-photo.svg" alt="Profile photo" />
     </div>
   </div>
 </div>
@@ -1093,12 +1102,6 @@
 
           <div class="formToast" role="status" aria-live="polite"></div>
         </form>
-      </div>
-
-      <!-- RIGHT: Photo slot (you will replace image) -->
-      <div class="talkVisual" aria-hidden="true">
-        <div class="blob"></div>
-        <img class="talkImg" src="assets/img/contact-photo.svg" alt="Piyusha Sayal" />
       </div>
 
     </div>
